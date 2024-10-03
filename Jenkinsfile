@@ -46,10 +46,10 @@ pipeline {
                 // This will copy your application to the /var/www/myapp directory on your AWS Ubuntu server.
                 // Replace "ubuntu" with the correct username, typically "ubuntu" for AWS EC2 Ubuntu AMIs.
 
-                sh '''
+                sh 
                 scp -o StrictHostKeyChecking=no -r ./ ubuntu@54.161.154.161:/var/www/myapp
                 ssh ubuntu@54.161.154.161 'pm2 restart myapp || pm2 start /var/www/myapp/index.js --name myapp'
-                '''
+                
             }
         }
     }
