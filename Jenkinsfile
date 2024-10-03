@@ -1,10 +1,15 @@
 pipeline {
     agent any
 
+    // environment {
+    //     NODEJS_HOME = tool name: 'NodeJS', type: 'NodeJSInstallation'
+    //     PATH = "${NODEJS_HOME}/bin:${env.PATH}"
+    // }
     environment {
-        NODEJS_HOME = tool name: 'NodeJS', type: 'NodeJSInstallation'
-        PATH = "${NODEJS_HOME}/bin:${env.PATH}"
-    }
+    NODEJS_HOME = tool name: 'NodeJS_LTS', type: 'NodeJSInstallation'
+    PATH = "${NODEJS_HOME}/bin:${env.PATH}"
+}
+
 
     stages {
         stage('Clone Repository') {
